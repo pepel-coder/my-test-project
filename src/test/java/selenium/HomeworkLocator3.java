@@ -1,40 +1,51 @@
 package selenium;
-
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class HomeworkLocator3 {
     private final By NAME_FIELD = By.id("name");
-    private final By NAME_SURNAME= By.id("ffInput");
-    private final By DISCOUNT= By.id("discount");
-    private final By ADULTS= By.id("adults");
-    private final By CHILDREN= By.id("children");
-    private final By LUGGAGE= By.id("bugs");
-    private final By FLIGHT= By.id("flight");
+    private final By SURNAME_FIELD = By.id("surname");
+    private final By DISCOUNT = By.id("discount");
+    private final By ADULTS = By.id("adults");
+    private final By CHILDREN = By.id("children");
+    private final By LUGGAGE = By.id("bugs");
+    private final By FLIGHT = By.id("flight");
+    private final By PRODUCT_TYPE = By.xpath("//*[@id='fullForm']/span[8]");
 
 
-
-
-    private final By LOGO = By.xpath(".//a[@class='main-logo']");
-    private final By PASUTIJUMU_INFORMACIJA = By.xpath(".//a[@href='/order_search']");
-    private final By FAVORITS = By.className("favorite-items__icon icon-svg");
-    private final By LV_LANG = By.xpath(".//a[@hreflang='lv']");
-    private final By RU_LANG = By.xpath(".//a[@hreflang='ru']");
-    private final By BANNER = By.xpath(".//img[@class = 'welcome-carusel-slider_image']");
-    private final By ACCEPT_ALL = By.xpath(".//a[@class='c-button']");
-    private final By COMPUTERS_BIRO = By.xpath(".//ul/a[@href= '/c/datortehnika-preces-birojam/2pd']");
-    private final By COMPUTERS_COMPONENTS = By.xpath(".//li[@class='submenu-lvl1__list-item color-theme-22 submenu-lvl1__list-item--has-child']");
-    private final By MOBILE = By.xpath(".//li[@class='submenu-lvl1__list-item color-theme-22 submenu-lvl1__list-item--has-child']");
-    private final By TV = By.xpath(".//li[@class='submenu-lvl1__list-item color-theme-20 submenu-lvl1__list-item--has-child']");
-    private final By PRODUCT_TYPE = By.xpath(".//span[@class = 'single-title']");
+    private final String HOME_PAGE_URL = "http://www.qaguru.lv:8089/tickets/step2.php?afrom=CPT&bfrom=BCN";
 
     @Test
     public void searchFieldCheck() {
         System.setProperty("webdriver.chrome.driver", "/users/zilite/Downloads/chromedriver");
         WebDriver browser = new ChromeDriver();
         browser.manage().window().maximize();
+        browser.get(HOME_PAGE_URL);
+
+        WebElement searchField = browser.findElement(NAME_FIELD);
+        searchField.sendKeys("Apple");
+        WebElement search = browser.findElement(SURNAME_FIELD);
+        search.sendKeys("S");
+        WebElement searchField3= browser.findElement(DISCOUNT);
+        searchField3.sendKeys("1323");
+        WebElement searchField4 = browser.findElement(ADULTS);
+        searchField4.sendKeys("2");
+        WebElement searchField5 = browser.findElement(CHILDREN);
+        searchField5.sendKeys("2");
+        WebElement searchField6 = browser.findElement(LUGGAGE);
+        searchField6.sendKeys("yes");
+        WebElement SearchField7 = browser.findElement(FLIGHT);
+        SearchField7.sendKeys("13-05-2018");
+        Actions actions = new Actions(browser);
+        WebElement searchField8 = browser.findElement(PRODUCT_TYPE);
+
+        actions.doubleClick(searchField8).perform();
+
 
     }
 }
