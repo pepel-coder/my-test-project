@@ -5,6 +5,8 @@ public class Train {
     private String trainNumber;
     private int trainConsumption;
     private int trainCopacity;
+    private int Mielage;
+    private int PriceForTonn;
 
     public String getTrainMark() {
         return trainMark;
@@ -37,6 +39,20 @@ public class Train {
     public void setTrainCopacity(int trainCopacity) {
         this.trainCopacity = trainCopacity;
     }
+
+    public void setMielage(int Mielage){this.Mielage=Mielage;}
+
+    public int getMielage () {
+
+        int a=(Mielage/100)*getTrainConsumption();
+        return a;
+    }
+    public void setPriceForTonn(int fuelprice){this.PriceForTonn=fuelprice;}
+    public double getPriceForTonn(){
+      double price=getMielage()*PriceForTonn/getTrainCopacity();
+      return price;
+    }
+
 
 
 }

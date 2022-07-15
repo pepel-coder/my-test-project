@@ -5,6 +5,8 @@ public class Truck {
     private String truckNumber;
     private int truckConsumption;
     private int truckCopacity;
+    private int Mielage;
+    private int PriceForTonn;
 
     public String getTruckMark() {
         return truckMark;
@@ -36,5 +38,16 @@ public class Truck {
 
     public void setTruckCopacity(int truckCopacity) {
         this.truckCopacity = truckCopacity;
+    }
+    public void setMielage(int Mielage){this.Mielage=Mielage;}
+
+    public int getMielage () {
+        int fuel= (Mielage/100)*getTruckConsumption();
+        return fuel;
+    }
+    public void setPriceForTonn(int fuelprice){this.PriceForTonn=fuelprice;}
+    public double getPriceForTonn(){
+        double price=getMielage()*PriceForTonn/getTruckCopacity();
+        return price;
     }
 }
