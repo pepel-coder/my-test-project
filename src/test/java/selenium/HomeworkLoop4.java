@@ -1,6 +1,9 @@
 package selenium;
 
+import lesson2.Student;
+import lesson2.Train;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,4 +49,51 @@ public void loopsLesson() {
     }
 
 
-}}
+        Student a = new Student();
+        a.setFirstName("Misha");
+        a.setGroup(1);
+        Student b = new Student();
+        b.setFirstName("Vasja");
+        b.setGroup(2);
+        Student c = new Student();
+        c.setFirstName("Klimov");
+        c.setGroup(3);
+        Student d = new Student();
+        d.setFirstName("Ira");
+        d.setGroup(1);
+        Student z = new Student();
+        z.setFirstName("Iraida");
+        z.setGroup(2);
+
+        List<String> studentNames = new ArrayList<>();
+        studentNames.add(a.getFirstName());
+        studentNames.add(b.getFirstName());
+        studentNames.add(c.getFirstName());
+        studentNames.add(d.getFirstName());
+        studentNames.add(z.getFirstName());
+        int count = 0;
+        for (int i = 0; i < studentNames.size(); i++){
+               count++;
+               System.out.println(count + ")" + studentNames.get(i));
+        }
+        ArrayList<Student> students = new ArrayList<>();
+       students.add(a);
+       students.add(b);
+       students.add(c);
+
+    
+
+
+   //     student.add(a.setFirstName("Misha"));
+    //    student.add(new Student("Stepan"));
+     //   student.add(new Student("Viktor");
+     //   student.add(new Student("Sasha"));
+     //   student.add(new Student("Kostik"));
+
+      //  for (Book book: arrayOfBooks) {
+      //      System.out.println("BookTitle: "+book.bookName+", by"+book.author+ "with a rating of "+book.rating);
+        }
+    }
+
+
+

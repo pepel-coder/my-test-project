@@ -6,6 +6,8 @@ public class Student {
     private String lastName;
     private int age;
     private String personalCode;
+    private int group;
+
    //---------------getters and settters-----comand+n= code generate
 
 
@@ -39,5 +41,12 @@ public class Student {
 
     public void setPersonalCode(String personalCode) {
         this.personalCode = personalCode;
+    }
+    public int getGroup() {
+        return group;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
     }
 }
